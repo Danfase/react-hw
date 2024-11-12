@@ -1,7 +1,8 @@
+import { ProductCard } from "./components/ProductCard";
 
 function App() {
   return (
-    <div>Hello World</div>
+    <div><ProductCard/></div>
   );
 }
 
