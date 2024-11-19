@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
 import { ProductCard } from "./components/ProductCard";
 
-const products = [
+const defaultValue = [
   {
     id:0,
     name: "Product 1",
@@ -18,8 +19,19 @@ const products = [
 ]
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState(defaultValue);
+
+  useEffect(() => {
+   fetch("https://fakestoreapi.com/products")
+    .then((res) => res.json())
+    .then((json) => setProducts(json))
+    .finally(() => setLoading(false));
+  }, []);
+  
   return (
     <div>
+      {loading && <div>Loading...</div>}
       {
         products.map((product) => (
         <ProductCard data={product} />

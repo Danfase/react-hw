@@ -1,13 +1,13 @@
 import "./index.css"
 
 export function ProductCard(props) {
-    const { image, category, name, price} = props.data;
+    const { image, category, title, price} = props.data;
 
     return (
         <div className="product-card">
             <img width={200} src={image} alt="" />
             <div>{category}</div>
-            <h4>{name}</h4>
+            <h4>{title}</h4>
             <div>{price}</div>
         </div>
     )
