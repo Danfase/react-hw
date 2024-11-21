@@ -30,7 +30,7 @@ function App() {
   }, []);
   
   return (
-    <div>
+    <div className="grid-container">
       {loading && <div>Loading...</div>}
       {
         products.map((product) => (
